@@ -30,7 +30,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "file:///home/user/Projects"
+                    "url" : "https://github.com:Stivux/1c-practice.git"
                 }
             ]
         }

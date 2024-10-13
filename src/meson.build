@@ -25,6 +25,7 @@ calories_sources = [
   'main.py',
   'calories_item.py',
   'window.py',
+  'backend/__init__.py',
   'backend/db.py',
   'backend/_constants.py',
   'backend/_pathes.py',
