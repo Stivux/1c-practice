@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/sp.nazarov.Calories.desktop.in
+data/sp.nazarov.Calories.metainfo.xml.in
+data/sp.nazarov.Calories.gschema.xml
+src/main.py
+src/window.py
+src/window.ui

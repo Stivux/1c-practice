@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=sp.nazarov.Calories
+Exec=@bindir@/calories --gapplication-service

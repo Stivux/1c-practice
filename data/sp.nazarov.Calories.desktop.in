@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=calories
+Exec=calories
+Icon=sp.nazarov.Calories
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true
