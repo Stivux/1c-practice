@@ -1,6 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
+
 template $CaloriesWindow: Adw.ApplicationWindow {
   title: _("Calories");
   default-width: 800;
@@ -8,6 +9,11 @@ template $CaloriesWindow: Adw.ApplicationWindow {
   content: Adw.ToolbarView {
     [top]
     Adw.HeaderBar {
+      [start]
+      Button new_item {
+        icon-name: "tab-new-symbolic";
+        name: "new_item";
+      }
       [end]
       MenuButton {
         primary: true;
@@ -15,13 +21,21 @@ template $CaloriesWindow: Adw.ApplicationWindow {
         tooltip-text: _("Main Menu");
         menu-model: primary_menu;
       }
+      [end]
+    Button find_item {
+      icon-name: "edit-find-symbolic";
+      name: "find_item";
     }
-    content: Label label {
-      label: _("Hello!");
+    }
+    content: Box {
+      orientation: vertical;
 
-      styles [
-        "title-1",
-      ]
+      ListBox list_box {
+       selection-mode: none;
+       styles [
+          "boxed-list"
+        ]
+      }
     };
   };
 }

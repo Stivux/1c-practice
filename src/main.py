@@ -26,6 +26,8 @@ gi.require_version('Adw', '1')
 from gi.repository import Gtk, Gio, Adw
 from .window import CaloriesWindow
 
+from .backend.db import HandleDB
+
 
 class CaloriesApplication(Adw.Application):
     """The main application singleton class."""
@@ -34,6 +36,10 @@ class CaloriesApplication(Adw.Application):
         super().__init__(application_id='sp.nazarov.Calories',
                          flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
         self.create_action('quit', lambda *_: self.quit(), ['<primary>q'])
+
+
+        self.database = HandleDB()
+        self.database._create_tables()
         self.create_action('about', self.on_about_action)
         self.create_action('preferences', self.on_preferences_action)
 

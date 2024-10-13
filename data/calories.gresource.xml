@@ -3,5 +3,6 @@
   <gresource prefix="/sp/nazarov/Calories">
     <file alias="gtk/help-overlay.ui" preprocess="xml-stripblanks">ui/help-overlay.ui</file>
     <file preprocess="xml-stripblanks">ui/window.ui</file>
+     <file preprocess="xml-stripblanks">ui/item.ui</file>
   </gresource>
 </gresources>

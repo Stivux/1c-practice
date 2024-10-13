@@ -19,10 +19,16 @@ configure_file(
   install_mode: 'r-xr-xr-x'
 )
 
+
 calories_sources = [
   '__init__.py',
   'main.py',
+  'calories_item.py',
   'window.py',
+  'backend/db.py',
+  'backend/_constants.py',
+  'backend/_pathes.py',
+  'backend/_dish.py'
 ]
 
 install_data(calories_sources, install_dir: moduledir)

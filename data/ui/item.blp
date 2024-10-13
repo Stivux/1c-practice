@@ -1,0 +1,35 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $CaloriesItem: Adw.ExpanderRow {
+title: _("Dish Title");
+          show-enable-switch: false;
+          Adw.EntryRow calories{
+            show-apply-button: true;
+            name: "calories";
+            title: _("Calories");
+            input-purpose: number;
+          }
+
+          Adw.EntryRow proteins {
+            show-apply-button: true;
+            name: "proteins";
+            title: _("Proteins");
+            input-purpose: number;
+          }
+
+          Adw.EntryRow fats {
+            show-apply-button: true;
+            name: "fats";
+            title: _("Fats");
+            input-purpose: number;
+          }
+
+          Adw.EntryRow carbohydrates {
+            show-apply-button: true;
+            name: "carbohydrates";
+            title: _("Carbohydrates");
+            input-purpose: number;
+          }
+
+}

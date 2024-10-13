@@ -19,12 +19,37 @@
 
 from gi.repository import Adw
 from gi.repository import Gtk
+from .calories_item import CaloriesItem 
+
 
 @Gtk.Template(resource_path='/sp/nazarov/Calories/ui/window.ui')
 class CaloriesWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'CaloriesWindow'
-
-    label = Gtk.Template.Child()
+    new_item: Gtk.Button = Gtk.Template.Child()
+    list_box = Gtk.Template.Child()
+    entry: Gtk.Entry = None
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.new_item.connect("clicked", self.new_dialog)
+
+    def new_dialog(self, button):
+        dialog = Adw.AlertDialog(
+        heading="New Dish",
+        close_response="cancel",
+    )
+
+        dialog.add_response("cancel", "Cancel")
+        dialog.add_response("new", "New")
+
+        dialog.set_response_appearance("new", Adw.ResponseAppearance.SUGGESTED)
+        self.entry = Gtk.Entry(name="dish_title")
+        dialog.set_extra_child(self.entry)
+        dialog.connect("response", self.new_dish)
+        dialog.choose(self)
+
+    def new_dish(self, response, select):
+        if select == "new":
+            item = CaloriesItem(title=self.entry.get_text())
+            item.set_expanded(True)
+            self.list_box.append(item)
